@@ -1,3 +1,7 @@
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 const parseEnv = (envVariable: string | boolean | number) => {
     try {
         return JSON.parse(envVariable as string)
@@ -7,7 +11,7 @@ const parseEnv = (envVariable: string | boolean | number) => {
 }
 
 const configEnv = {
-    APP_URL: process.env.BASE_PORT || ''
+    BASE_PORT: process.env.BASE_PORT || ''
 } as const
 
 export default Object.fromEntries(
